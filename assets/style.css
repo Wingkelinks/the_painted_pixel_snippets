@@ -1,0 +1,80 @@
+@import url('https://fonts.googleapis.com/css?family=Montserrat:200,300,400,600');
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700;900&family=Rubik+Moonrocks&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Cutive+Mono&family=Rubik+Mono+One&display=swap');
+
+
+
+body {
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  width: 100%;
+  height: 100%;
+  background: #111111;
+  /* background-image: url(../assets/images/paintbrush.jpg);
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-attachment: fixed;
+  background-size: cover; */
+  transition: background-color 1.5s ease-in-out;
+}
+
+
+.welcome_msg {
+  z-index: 10;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  font-size: 2rem;
+  text-transform: uppercase;
+  height: 80vh;
+  transform: translateX(-50%) translateY(-50%);
+  font-family: 'Cutive Mono', monospace;
+  text-align: center;
+  width: 100%;
+  line-height: 1;
+  color: #7692ff;
+  transition: ease-in-out color .5s;
+}
+
+canvas {
+  opacity: 1;
+  color: #000000;
+  transition: opacity 1s ease-in-out;
+}
+
+.intro_msg {
+  color: #7692ff;
+  position: absolute;
+  text-align: center;
+  top: 85%;
+  bottom: 0;
+  width: 100%;
+  z-index: 10;
+  font-family: 'Cutive Mono', monospace;
+  font-size: 1.5rem;
+  transition: ease-in-out color .5s;
+  text-transform: uppercase;
+}
+
+.intro_msg span {
+  color: #c6f91f;
+}
+
+/* .intro_msg a {
+  transition: ease-in-out color .5s;
+  text-decoration: none;
+  color: #7692ff;
+  cursor: pointer;
+} */
+
+/* .intro_msg a:hover {
+  color: #E67162;
+  cursor: pointer;
+} */
+
+
+/* .title h3:hover {
+  color: #5F54FB;
+  cursor: pointer;
+} */
