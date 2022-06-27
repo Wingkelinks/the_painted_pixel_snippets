@@ -178,7 +178,7 @@ function writeText(canvas, context, text) {
   var size = 80;
   context.font = size + "px Rubik Mono One";
   context.fillStyle = title_base_color;
-  context.textAlign = "center";
+  context.textAlign = "left";
   context.transition = "all 2s ease-in-out";
   var lineheight = 80;
   var lines = text.split("\n");
