@@ -11,24 +11,45 @@
 
 <body>
 
-  <div id="container">
+  <svg xmlns="http://www.w3.org/2000/svg" version="1.1">
+    <defs>
+      <filter id="paint">
+        <feGaussianBlur in="SourceGraphic" stdDeviation="10" result="blur" />
+        <feColorMatrix in="blur" mode="matrix" values="1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 19 -9" result="goo" />
+        <feComposite in="SourceGraphic" in2="paint" operator="atop" />
+      </filter>
+    </defs>
+  </svg>
+  <canvas id="canvas1"></canvas>
 
-    <div class="paintbrush_img">
-      <img src="assets/images/painted_pixel_brush3.png" alt="">
-    </div>
-
-    <div class='welcome_msg'>
-      <h3>Welcome<strong> To</strong></h3>
-    </div>
-
-    <div class='intro_msg'>
-      <p>
-        <span>Web Design</span> |
-        <span>Web Development</span>
-      </p>
-    </div>
-
+  <div class='welcome_msg'>
+    <h3>Welcome to The Painted Pixel</h3>
   </div>
+  <div class='intro_msg'>
+    <p>
+      <span>Web Design</span> |
+      <span>Web Development</span>
+    </p>
+  </div>
+
+  <div class="container">
+    <nav>
+      <button></button>
+      <button></button>
+      <button></button>
+      <button></button>
+      <button></button>
+    </nav>
+  </div>
+
+  <div class="scroll"><span>SCROLL DOWN</span></div>
+
+
+
+  <!-- <canvas id="cnv" width="800" height="800"></canvas>
+
+  <img id="paintbrush" class="hide" src="assets/images/painted_pixel5.svg" alt=""> -->
+
   <script src="assets/script.js"></script>
 
 </body>

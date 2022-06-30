@@ -1,32 +1,34 @@
 @import url('https://fonts.googleapis.com/css2?family=Cutive+Mono&family=Rubik+Mono+One&display=swap');
 
+:root {
+  --clr-primary--w: #F5F5F5;
+  --clr-primary--blk: #121212;
+  --clr-primary--bl: #30475E;
+  --clr-primary--r: #F05454;
+  --clr-primary--g: #AFE04E;
+}
 
+/* .hide {
+  display: none;
+} */
 
-body {
+/* body {
   margin: 0;
   padding: 0;
   overflow: hidden;
   width: 100%;
   height: 100%;
   background: #111111;
-  /* background-image: url(../assets/images/paintbrush.jpg);
-  background-repeat: no-repeat;
-  background-position: center center;
-  background-attachment: fixed;
-  background-size: cover; */
   transition: background-color 1.5s ease-in-out;
-}
+} */
 
-.paintbrush_img img {
-  z-index: 10;
-  position: absolute;
-  width: 20vw;
-  height: auto;
-  object-fit: cover;
-}
+/* #paintbrush img {
+  width: 10vw !important;
+  height: 10vh !important;
+} */
 
 
-.welcome_msg {
+/* .welcome_msg {
   z-index: 10;
   position: absolute;
   left: 50%;
@@ -41,13 +43,13 @@ body {
   line-height: 1;
   color: #7692ff;
   transition: ease-in-out color .5s;
-}
+} */
 
-.container {
-  /*
+/*
   set max-width and max-height to canvas 
   width/height respectively
   */
+/* .container {
   max-width: 640px;
   max-height: 480px;
   width: 100%;
@@ -62,25 +64,9 @@ canvas {
   max-height: 100%;
   width: auto;
   height: auto;
-}
+} */
 
-.intro_msg {
-  color: #7692ff;
-  position: absolute;
-  text-align: right;
-  top: 85%;
-  bottom: 0;
-  width: 100%;
-  z-index: 10;
-  font-family: 'Cutive Mono', monospace;
-  font-size: 1.5rem;
-  transition: ease-in-out color .5s;
-  text-transform: uppercase;
-}
 
-.intro_msg span {
-  color: #c6f91f;
-}
 
 /* .intro_msg a {
   transition: ease-in-out color .5s;
@@ -98,4 +84,224 @@ canvas {
 /* .title h3:hover {
   color: #5F54FB;
   cursor: pointer;
+} */
+
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  background-color: var(--clr-primary--blk);
+}
+
+.container {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+#canvas1 {
+  position: absolute;
+  top: 0;
+  left: 0;
+  filter: url("#paint");
+  opacity: 1;
+}
+
+svg {
+  display: none;
+}
+
+#banner {
+  background: var(--clr-primary--bl);
+  position: static;
+}
+
+.welcome_msg {
+  position: fixed;
+  top: 0%;
+  left: 50%;
+  width: 100%;
+  background: var(--clr-primary--blk);
+  transform: translate(-50%, -50%);
+  text-align: center;
+  font-size: 2.5rem;
+  font-weight: 900;
+  margin-top: 3rem;
+  text-transform: uppercase;
+  font-family: 'Rubik Mono One', sans-serif;
+  color: var(--clr-primary--w);
+  transition: ease-in-out color .5s;
+}
+
+.intro_msg {
+  color: var(--clr-primary--bl);
+  background: var(--clr-primary--r);
+  position: absolute;
+  top: 18%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  width: 100%;
+  font-family: 'Cutive Mono', monospace;
+  font-size: 1.5rem;
+  font-weight: 900;
+  transition: ease-in-out color .5s;
+  text-transform: uppercase;
+  cursor: pointer;
+}
+
+.intro_msg span {
+  color: var(--clr-primary--g);
+  font-weight: 900;
+}
+
+nav {
+  width: 200px;
+  height: 245px;
+  z-index: 50;
+  position: absolute;
+  left: 50%;
+  top: 60%;
+  transform: translate(-50%, -50%);
+}
+
+button {
+  font-family: 'Cutive Mono', monospace;
+  font-size: 1.5rem;
+  font-weight: 800;
+  width: 100%;
+  height: 50px;
+  transition: .3s;
+  position: relative;
+  color: var(--clr-primary--blk);
+  margin: 0.2rem 0;
+  background-color: var(--clr-primary--w);
+  border: none;
+  outline: none;
+  background: var(--clr-primary--w);
+  cursor: pointer;
+  border: 1 px solid var(--clr-primary--w);
+  border-radius: 5rem;
+}
+
+button::before {
+  content: '';
+  outline: none;
+  border: 1 px solid var(--clr-primary--w);
+  border-radius: 0.3rem;
+  width: 100%;
+  height: 50px;
+  line-height: 50px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  transition: .3s;
+  background: var(--clr-primary--w);
+}
+
+button:nth-child(1)::before {
+  content: 'HOME';
+}
+
+button:nth-child(2)::before {
+  content: 'PROJECTS';
+}
+
+button:nth-child(3)::before {
+  content: 'CONTACT';
+}
+
+button:nth-child(4)::before {
+  content: 'ABOUT';
+}
+
+button:nth-child(5)::before {
+  content: 'HIRE ME';
+}
+
+button:hover::before {
+  transform: translateX(-50px);
+}
+
+.scroll span {
+  color: var(--clr-primary--w);
+  position: fixed;
+  bottom: 0;
+  text-align: center;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-family: 'Cutive Mono', monospace;
+  font-size: 0.8rem;
+  padding: 0.6rem;
+}
+
+
+/* .mainBlock {
+  width: 100%;
+  min-width: 500px;
+  height: 270px;
+  margin-left: 347px;
+  top: 0;
+  border: 3px solid var(--clr-primary--1);
+  position: absolute;
+  padding: 38px 60px;
+  background: var(--clr-primary--1);
+  color: var(--clr-primary--2);
+  font-size: 14px;
+  opacity: 0;
+}
+
+.mainBlock>div>p:nth-child(2) {
+  text-align: right;
+  margin-top: 40px;
+} */
+
+/* .topBlock {
+  width: 80%;
+  height: 70px;
+  left: 60px;
+  top: -70px;
+  position: absolute;
+  border: 2px solid var(--clr-primary--1);
+  color: var(--clr-primary--1);
+  opacity: 0;
+}
+
+.topBlock>div {
+  width: 80%;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  padding: 0;
+  font-size: 16px;
+  text-align: center;
+  opacity: 0;
+}
+
+.bottomBlock {
+  width: 80%;
+  height: 140px;
+  left: 70px;
+  bottom: -141px;
+  position: absolute;
+  border: 2px solid #121212;
+  background: #121212;
+  text-align: center;
+  color: #F5F5F5;
+  padding: 30px;
+}
+
+.bottomBlock>div {
+  width: 80%;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  padding: 0;
+  font-size: 16px;
 } */
